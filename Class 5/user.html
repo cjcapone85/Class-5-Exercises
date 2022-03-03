@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="user-form">
+        <input id="user-input" type="text" placeholder="+ Add user" required />
+        <button id="user-submit">Save</button>
+      </form>
+      <ul id="users"></ul>
+
+
+      
+    <script>
+        const userForm = document.getElementById("user-form");
+        const userInput = document.getElementById("user-input");
+        const userSubmit = document.getElementById("user-submit");
+        const users = document.getElementById("users");
+
+        const userBuilder = (text) => {
+        const user = document.createElement("li");
+        user.innerHTML = text + ' <button onclick="deleteNote(this)">x</button>';
+        user.appendChild(user);
+        };
+
+        const getUsers = JSON.parse(localStorage.getItem("users"));
+        getUsers.forEach((user) => {
+        listBuilder(user);
+        });
+
+        const deleteNote = (btn) => {
+        let el = btn.parentNode;
+        const index = [...el.parentElement.children].indexOf(el);
+        usersStorage.splice(index, 1);
+        localStorage.setItem("users", JSON.stringify(usersStorage));
+        el.remove();
+        };
+
+        let usersStorage = localStorage.getItem("users")
+  ? JSON.parse(localStorage.getItem("users"))
+  : [];
+
+    userForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    usersStorage.push(userInput.value);
+    localStorage.setItem("users", JSON.stringify(usersStorage));
+    listBuilder(userInput.value);
+    userInput.value = "";
+    });
+
+
+
+
+
+    </script>
+</body>
+</html>

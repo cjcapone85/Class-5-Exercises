@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try 1</title>
+    <link rel="stylesheet" href="styles5-1.css" />
+
+  </head>
+  <body>
+    <!-- * MAIN CONTENT * -->
+    <main class="container">
+      <!-- Title -->
+      <h1>User Info</h1>
+
+      <!-- Overlay -->
+      <div class="overlay"></div>
+
+      <!-- Input Form -->
+      <form id="link-form">
+        <label for="link" class="sr-only">Enter Your Link</label>
+        <input
+          class="link-input"
+          type="text"
+          id="link"
+          name="link"
+          placeholder="Who is visiting?"
+        />
+        <button type="submit" class="btn" aria-label="Add new link">
+          &plus;
+        </button>
+      </form>
+
+      <!-- Link List -->
+      <ul class="link-list">
+        <!-- <li>
+          <a class="link" href="/">This is a test link</a>
+        </li>
+        <li>
+          <a class="link" href="/">This is a test link</a>
+        </li> -->
+      </ul>
+    </main>
+
+    <!-- * JAVASCRIPT * -->
+    <script src="./5-1.js"></script>
+  </body>
 </html>
